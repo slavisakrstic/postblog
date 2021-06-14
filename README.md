@@ -1,5 +1,5 @@
 POST BLOG APPLICATION
 
-Backend application setup and instructions: [linky](backend/README.md)
+Backend application setup and instructions: [link](backend/README.md)
 
-Frontend application setup and instructions: [linky](frontend/README.md)
+Frontend application setup and instructions: [link](frontend/README.md)
