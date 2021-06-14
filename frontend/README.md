@@ -34,3 +34,6 @@ The docker compose configuration (in `docker-compose.yml`) will run the followin
 
 ## Run in docker
 - docker-componse up -d - Fackend application
+
+## URLs
+- Applicaction is running on http://localhost:3020

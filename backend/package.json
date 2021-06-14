@@ -19,7 +19,7 @@
     "lint:fix": "eslint src --ext ts --fix --max-warnings 0",
     "test": "jest src --setupFiles dotenv/config",
     "test:watch": "jest src --watch --setupFiles dotenv/config",
-    "test:cover": "jest src --coverage --setupFiles dotenv/config",
+    "test:coverage": "jest src --coverage --setupFiles dotenv/config",
     "test:integration": "jest --config=integration.jest.config.js --bail --forceExit --runInBand --coverage=false integration-tests"
   },
   "dependencies": {
