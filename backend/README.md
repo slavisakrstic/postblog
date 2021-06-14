@@ -14,21 +14,23 @@ Backend application for post blog
 ## Run locally
 1. Run in development: `npm run start:dev`
 2. Run in development with debugger `npm run start:debug`
-3. Run `npm run start`
+3. Run `npm run start` - to use this check command 4. and 5.
+4. Run `npm run build:migrations`
+5. Run `npm run migrate:run`
 
 ## Run tests
 1. Run unit tests: `npm run test`
 2. Run integration tests: `npm run test:integration`
 
 ## Run integration tests NOTE:
-- First execute: `docker-componse up -d` to download pg image. 
+- First execute: `docker-compose up -d` to download pg image. 
 - Tests will timeout if image is not downloaded
 
 ### Configuration
 - See `.env`
 
 ## Launch locally with docker compose
-- See docker-componse.yml 
+- See docker-compose.yml 
 - See Dockerfile
 
 ## Prerequisites to run in docker
@@ -41,7 +43,9 @@ The docker compose configuration (in `docker-compose.yml`) will run the followin
 - Backend Application
 
 ## Run in docker
-- `docker-componse up -d` - will start PG, PG Admin and the backend application
+- `docker network create tx` - if it is not created
+- `docker network create pgadmin` - if it is not created
+- `docker-compose up -d` - will start PG, PG Admin and the backend application
 
 ## URLs
 - Applicaction is running on http://localhost:3010

@@ -18,6 +18,7 @@ export default class App {
     await this.database.create();
     await this.database.start();
 
+    process.env.PORT = "3030";
     process.env.POSTGRES_HOST = "localhost";
     process.env.POSTGRES_PORT = "5433";
     process.env.POSTGRES_DB = "test";

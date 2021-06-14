@@ -22,7 +22,7 @@ Frontend application for post blog
 - See `.env`
 
 ## Launch locally with docker compose
-- See docker-componse.yml 
+- See docker-compose.yml 
 - See Dockerfile
 
 ## Prerequisites to run in docker
@@ -33,7 +33,9 @@ The docker compose configuration (in `docker-compose.yml`) will run the followin
 - Frontned Application
 
 ## Run in docker
-- docker-componse up -d - Fackend application
+- `docker network create tx` - if it is not created
+- `docker network create pgadmin` - if it is not created
+- `docker-compose up -d` - Frontend application
 
 ## URLs
 - Applicaction is running on http://localhost:3020
