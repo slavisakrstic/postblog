@@ -1,0 +1,23 @@
+{
+  "translation": {
+    "__general": {
+      "title": "Post blog",
+      "ok": "OK",
+      "cancel": "CANCEL"
+    },
+    "__post": {
+      "create": "New blog post",
+      "deleteMsg": "Are you sure you want to delete this post?",
+      "numberOfComments": "Number of comments",
+      "backToPosts": "Back to posts",
+      "updatePostTitle": "Update post blog",
+      "createPostTitle": "Create post blog"
+    },
+    "__comment": {
+      "deleteMsg": "Are you sure you want to delete this comment?",
+      "updateCommentTitle": "Update comment",
+      "createCommentTitle": "Add comment",
+      "anonymous": "Anonymous"
+    }
+  }
+}

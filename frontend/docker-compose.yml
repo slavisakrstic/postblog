@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+
+  frontend:
+    image: ${IMAGE_NAME:-frontend}
+    build:
+      context: ${BUILD_DIR:-./}
+    container_name: frontend
+    restart: always
+    environment:
+      - CONTAINER_HOSTNAME=frontend
+      - PORT=8080
+      - REACT_APP_API_BASE_URL=http://localhost:3010/v0
+      - REACT_APP_API_POSTBLOGS_POSTS_URL=posts
+      - REACT_APP_API_POSTBLOGS_COMMENTS_URL=comments
+    ports:
+      - 3020:8080
+    networks:
+      - tx
+
+networks:
+  tx:
+    external: true
+    name: tx

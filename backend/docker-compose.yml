@@ -1,0 +1,55 @@
+version: '3.7'
+
+services:
+
+  pg:
+    image: postgres:11.4
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: txservices
+      POSTGRES_USER: txservices
+      POSTGRES_DB: txservices_postblog
+    ports:
+      - 5432:5432
+    networks: 
+      - tx
+      - pgadmin
+
+  admin:
+    image: dpage/pgadmin4:4.15
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: txservices@txservices.com
+      PGADMIN_DEFAULT_PASSWORD: txservices
+    ports:
+      - 5050:80
+    networks: 
+      - pgadmin
+
+  backend:
+    image: ${IMAGE_NAME:-backend}
+    build:
+      context: ${BUILD_DIR:-./}
+    container_name: backend
+    restart: always
+    environment:
+      - CONTAINER_HOSTNAME=backend
+      - PORT=8080
+      - NODE_ENV=production
+      - POSTGRES_HOST=host.docker.internal
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=txservices_postblog
+      - POSTGRES_USER=txservices
+      - POSTGRES_PASSWORD=txservices
+    ports:
+      - 3010:8080
+    networks:
+      - tx
+
+networks:
+  pgadmin:
+    external: true
+    name: pgadmin
+  tx:
+    external: true
+    name: tx
